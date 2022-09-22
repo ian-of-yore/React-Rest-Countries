@@ -13,14 +13,15 @@ const Countries = () => {
     return (
         <div>
             <h1 className='countries-header'>Wecome to React REST Countries API</h1>
-            {
-                countries.map(country => <Country
-                    name={country.name.common}
-                    population={country.population}
-                    flag={country.flags.png}
-                    capital={country.capital}
-                    region={country.subregion}></Country>)
-            }
+            <div className='countries-container'>
+                {
+                    countries.map(country => <Country
+                        country={country}
+                        key={country.cca3}
+                    ></Country>)
+                }
+            </div>
+
         </div>
     );
 };
